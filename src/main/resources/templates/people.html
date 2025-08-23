@@ -20,7 +20,11 @@
                     <td th:text="${person.id}"></td>
                     <td th:text="${person.name}"></td>
                     <td th:text="${person.gender}"></td>
-                    <td th:text="${person.isActive}"></td>
+                    <!-- Evaluation for personIsActive 
+                    <td th:if="${person.isActive}">Activo</td>
+                    <td th:unless="${person.isActive}">Inactivo</td> -->
+                    <!-- ternary operator -->
+                    <td th:text="${person.active} ? 'Activo' : 'Inactivo'"></td>
                     
                 </tr>
             </tbody>
