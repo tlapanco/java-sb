@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tl.curso.service.implementation;
 
 import com.tl.curso.entities.Person;
@@ -44,7 +40,7 @@ public class PersonServiceImplementation implements PersonService {
         if (personToUpdate != null) {
             personToUpdate.setName(person.getName());
             personToUpdate.setGender(person.getGender());
-            personToUpdate.setActive(person.isActive());
+            personToUpdate.setActive(person.getActive());
             return personRepository.save(personToUpdate);
         } else
             return null;
