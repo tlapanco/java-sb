@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tl.curso.controller;
 
 import com.tl.curso.entities.Person;
@@ -10,6 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -31,6 +29,20 @@ public class PersonController {
         List<Person> peopleList = personService.getAll();
         model.addAttribute("peopleList", peopleList);
         return "people";
+    }
+
+    /*Create person */
+    @GetMapping("/createPerson")
+    public String createPersonForm(Model model) {
+        model.addAttribute("person", new Person());
+        model.addAttribute("action", "/savePerson");
+        return "createPerson";
+    }
+
+    @PostMapping("/savePerson")
+    public String savePerson(@ModelAttribute Person person) {
+        personService.createPerson(person);
+        return "redirect:/";
     }
 
 }
