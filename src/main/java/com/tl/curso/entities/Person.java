@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tl.curso.entities;
 
 import jakarta.persistence.Entity;
@@ -30,7 +26,7 @@ public class Person {
     
     private String name;
     
-    private char gender;
+    private Character gender;
     
-    private boolean active;
+    private Boolean active;
 }
