@@ -29,7 +29,7 @@
                     <!-- ternary operator -->
                     <td th:text="${person.active} ? 'Active' : 'Inactive'"></td>
                     <td>
-                        <a>Editar</a>
+                        <a th:href="@{/editPerson/{id}(id=${person.id})}">Editar</a>
                         <a>Eliminar</a>
                     </td>
                 </tr>

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Create person</title>
+    <title>Edit person</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>Create a new Person</h1>
+    <h1 th:text="|Edit person with ID: ${person.id}|"></h1>
 
     <form th:object="${person}" th:action="${action}" method="POST">
+        <input type="hidden" th:field="*{id}" />
+
         <label>Name</label>
-        <input type="text" th:field="*{name}" value="${person.name}"/>
+        <input type="text" th:field="*{name}" />
 
         <label>Gender</label>
         <select th:field="*{gender}">
-            <option disabled selected value="">--Select a gender--</option>
+            <option disabled value="">--Select a gender--</option>
             <option value="m">Female</option>
             <option value="h">Male</option>
         </select>
@@ -22,7 +24,7 @@
         <label>Status</label>
         <label for="active">Active</label>
         <input type="radio" id="active" th:field="*{active}" value="true" />
-        
+
         <label for="inactive">Inactive</label>
         <input type="radio" id="inactive" th:field="*{active}" value="false" />
 
