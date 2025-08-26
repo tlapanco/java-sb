@@ -60,4 +60,11 @@ public class PersonController {
         return "redirect:/";
     }
 
+    /*Delete person*/
+    @GetMapping("/deletePerson/{id}")
+    public String deletePerson(@PathVariable Long id) {
+        personService.deletePerson(id);
+        return "redirect:/";
+    }
+
 }

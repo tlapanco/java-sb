@@ -30,7 +30,7 @@
                     <td th:text="${person.active} ? 'Active' : 'Inactive'"></td>
                     <td>
                         <a th:href="@{/editPerson/{id}(id=${person.id})}">Editar</a>
-                        <a>Eliminar</a>
+                        <a th:href="@{/deletePerson/{id}(id=${person.id})}">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
